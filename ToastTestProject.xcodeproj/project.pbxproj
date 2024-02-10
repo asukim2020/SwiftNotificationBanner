@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263465AEF1A40966D8355B8C /* Pods_ToastTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BB30B94246F3F3C4A9C618 /* Pods_ToastTestProject.framework */; };
+		522E23CE2B7222A100A74013 /* NotificationBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E23CD2B7222A100A74013 /* NotificationBannerView.swift */; };
 		52B62C0F2B72133C00A09834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C0E2B72133C00A09834 /* AppDelegate.swift */; };
 		52B62C112B72133C00A09834 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C102B72133C00A09834 /* SceneDelegate.swift */; };
 		52B62C132B72133C00A09834 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C122B72133C00A09834 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 		52B62C262B72133D00A09834 /* ToastTestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C252B72133D00A09834 /* ToastTestProjectTests.swift */; };
 		52B62C302B72133D00A09834 /* ToastTestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C2F2B72133D00A09834 /* ToastTestProjectUITests.swift */; };
 		52B62C322B72133D00A09834 /* ToastTestProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C312B72133D00A09834 /* ToastTestProjectUITestsLaunchTests.swift */; };
+		52B62C3F2B7215DF00A09834 /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C3E2B7215DF00A09834 /* RxViewController.swift */; };
+		52B62C412B7215F500A09834 /* RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C402B7215F500A09834 /* RxExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		522E23CD2B7222A100A74013 /* NotificationBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerView.swift; sourceTree = "<group>"; };
 		52B62C0B2B72133C00A09834 /* ToastTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToastTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B62C0E2B72133C00A09834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B62C102B72133C00A09834 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		52B62C2B2B72133D00A09834 /* ToastTestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToastTestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B62C2F2B72133D00A09834 /* ToastTestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastTestProjectUITests.swift; sourceTree = "<group>"; };
 		52B62C312B72133D00A09834 /* ToastTestProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastTestProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52B62C3E2B7215DF00A09834 /* RxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
+		52B62C402B7215F500A09834 /* RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtension.swift; sourceTree = "<group>"; };
+		84BB30B94246F3F3C4A9C618 /* Pods_ToastTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToastTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E874C6F16710DBD33E33C7A /* Pods-ToastTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToastTestProject.debug.xcconfig"; path = "Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject.debug.xcconfig"; sourceTree = "<group>"; };
+		D6D358FCA845E6CFC9A571BB /* Pods-ToastTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToastTestProject.release.xcconfig"; path = "Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263465AEF1A40966D8355B8C /* Pods_ToastTestProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +94,8 @@
 				52B62C242B72133D00A09834 /* ToastTestProjectTests */,
 				52B62C2E2B72133D00A09834 /* ToastTestProjectUITests */,
 				52B62C0C2B72133C00A09834 /* Products */,
+				601A88E34C3C817ACA8EE9F2 /* Pods */,
+				DC0B96C1E77D72BD7F9C5B43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +119,9 @@
 				52B62C172B72133D00A09834 /* Assets.xcassets */,
 				52B62C192B72133D00A09834 /* LaunchScreen.storyboard */,
 				52B62C1C2B72133D00A09834 /* Info.plist */,
+				52B62C3E2B7215DF00A09834 /* RxViewController.swift */,
+				52B62C402B7215F500A09834 /* RxExtension.swift */,
+				522E23CD2B7222A100A74013 /* NotificationBannerView.swift */,
 			);
 			path = ToastTestProject;
 			sourceTree = "<group>";
@@ -127,6 +143,23 @@
 			path = ToastTestProjectUITests;
 			sourceTree = "<group>";
 		};
+		601A88E34C3C817ACA8EE9F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E874C6F16710DBD33E33C7A /* Pods-ToastTestProject.debug.xcconfig */,
+				D6D358FCA845E6CFC9A571BB /* Pods-ToastTestProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC0B96C1E77D72BD7F9C5B43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84BB30B94246F3F3C4A9C618 /* Pods_ToastTestProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B62C352B72133D00A09834 /* Build configuration list for PBXNativeTarget "ToastTestProject" */;
 			buildPhases = (
+				C63CE6B8A4FD0897286072ED /* [CP] Check Pods Manifest.lock */,
 				52B62C072B72133C00A09834 /* Sources */,
 				52B62C082B72133C00A09834 /* Frameworks */,
 				52B62C092B72133C00A09834 /* Resources */,
+				C0930FB2D2DAEF6C389B1EFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +288,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C0930FB2D2DAEF6C389B1EFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C63CE6B8A4FD0897286072ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToastTestProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52B62C072B72133C00A09834 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -260,7 +337,10 @@
 			files = (
 				52B62C132B72133C00A09834 /* ViewController.swift in Sources */,
 				52B62C0F2B72133C00A09834 /* AppDelegate.swift in Sources */,
+				52B62C3F2B7215DF00A09834 /* RxViewController.swift in Sources */,
 				52B62C112B72133C00A09834 /* SceneDelegate.swift in Sources */,
+				52B62C412B7215F500A09834 /* RxExtension.swift in Sources */,
+				522E23CE2B7222A100A74013 /* NotificationBannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +433,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -416,7 +496,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -437,6 +517,7 @@
 		};
 		52B62C362B72133D00A09834 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E874C6F16710DBD33E33C7A /* Pods-ToastTestProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -465,6 +546,7 @@
 		};
 		52B62C372B72133D00A09834 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6D358FCA845E6CFC9A571BB /* Pods-ToastTestProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
