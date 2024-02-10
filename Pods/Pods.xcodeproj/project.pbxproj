@@ -738,7 +738,7 @@
 		9CA9EDE6941085D2DDDADCEEEE594F06 /* SynchronizedUnsubscribeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedUnsubscribeType.swift; path = RxSwift/Concurrency/SynchronizedUnsubscribeType.swift; sourceTree = "<group>"; };
 		9CAB8FD9FE1E130C91604E06F9891992 /* WithLatestFrom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WithLatestFrom.swift; path = RxSwift/Observables/WithLatestFrom.swift; sourceTree = "<group>"; };
 		9D667EA07673E674D23C9BA715E5288B /* UIBarButtonItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Rx.swift"; path = "RxCocoa/iOS/UIBarButtonItem+Rx.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DC293903A5FD24D1AFCF7D56D840629 /* ControlEvent+Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlEvent+Signal.swift"; path = "RxCocoa/Traits/Signal/ControlEvent+Signal.swift"; sourceTree = "<group>"; };
 		9EC0758ECBA9361E4EA1938B6CF2529B /* MarqueeLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarqueeLabel-prefix.pch"; sourceTree = "<group>"; };
 		9F1257B620903B1DAB292873049CED25 /* RxTextViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTextViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTextViewDelegateProxy.swift; sourceTree = "<group>"; };
@@ -877,7 +877,7 @@
 		F32ACE78DC1F9F31ACFB61E347B85F0C /* RxCocoa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxCocoa-dummy.m"; sourceTree = "<group>"; };
 		F35B41CDAE121592BDC618866F1CB463 /* Infallible+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Infallible+Create.swift"; path = "RxSwift/Traits/Infallible/Infallible+Create.swift"; sourceTree = "<group>"; };
 		F36757E80F32090A74EECEA7FD62BCB0 /* NotificationBannerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NotificationBannerSwift.debug.xcconfig; sourceTree = "<group>"; };
-		F3CEE7BEB39549D845A7BD2720D85358 /* Pods-ToastTestProject */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ToastTestProject"; path = Pods_ToastTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3CEE7BEB39549D845A7BD2720D85358 /* Pods_ToastTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToastTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40CA5B820D0D4809E675BE57DAE6151 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		F4693BF651570E027B52EE3F6BC199E0 /* ConcurrentDispatchQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentDispatchQueueScheduler.swift; path = RxSwift/Schedulers/ConcurrentDispatchQueueScheduler.swift; sourceTree = "<group>"; };
 		F49D7C1FE6A9EBCF07C6E2F5E06B275C /* Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Driver.swift; path = RxCocoa/Traits/Driver/Driver.swift; sourceTree = "<group>"; };
@@ -987,7 +987,6 @@
 				51A597B2ADFDAE34DBFFE374BD13B097 /* Utils.swift */,
 				971B78BD2E3EBF74EFAA3A64A0D945CC /* Support Files */,
 			);
-			name = RxRelay;
 			path = RxRelay;
 			sourceTree = "<group>";
 		};
@@ -996,7 +995,7 @@
 			children = (
 				CF0AA9FBFBDB70858C030769541505ED /* MarqueeLabel */,
 				0AB91F46DDDA5588520D012E6F4FB918 /* NotificationBannerSwift */,
-				F3CEE7BEB39549D845A7BD2720D85358 /* Pods-ToastTestProject */,
+				F3CEE7BEB39549D845A7BD2720D85358 /* Pods_ToastTestProject.framework */,
 				BC432FD48A5932251F1CAFBC4BF74894 /* RxCocoa */,
 				4C7573034822F093BCAF13EC6B7B8454 /* RxGesture */,
 				FF8B264DFE802855D5D67E7CDDABFC3C /* RxRelay */,
@@ -1047,7 +1046,6 @@
 				50B218A12D74600FD06402C040A08609 /* UILayoutSupport+Extensions.swift */,
 				63A5654B5F1DBF256C9D4455273313C2 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1134,7 +1132,6 @@
 				6A2BA0D3463A3CFE0086E3182838AD6A /* View+RxGesture.swift */,
 				4837F5BE3F773FE7AB03213408B02A62 /* Support Files */,
 			);
-			name = RxGesture;
 			path = RxGesture;
 			sourceTree = "<group>";
 		};
@@ -1270,7 +1267,6 @@
 				960C0EC54B3EAB364F926F533B7B2515 /* WKWebView+Rx.swift */,
 				5C08DDDEE8B3A73B2DFF0DB336BBE797 /* Support Files */,
 			);
-			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -1295,7 +1291,6 @@
 				C238AEBCA5A70490A62A3F13B1C5447F /* MarqueeLabel.swift */,
 				C6748F005F858ADC7EAF9E307EE190C8 /* Support Files */,
 			);
-			name = MarqueeLabel;
 			path = MarqueeLabel;
 			sourceTree = "<group>";
 		};
@@ -1481,7 +1476,6 @@
 				B241F03960CC7DAAB3448674D96EEA83 /* Zip+Collection.swift */,
 				EF587B4AF102828D386625C68CAF74EF /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -1536,7 +1530,6 @@
 				28B51DC565B724F000B5F7A857903292 /* UIWindow+orientation.swift */,
 				5CF93A6695CC77DE2500AA31B7118584 /* Support Files */,
 			);
-			name = NotificationBannerSwift;
 			path = NotificationBannerSwift;
 			sourceTree = "<group>";
 		};
@@ -1796,7 +1789,7 @@
 			);
 			name = "Pods-ToastTestProject";
 			productName = Pods_ToastTestProject;
-			productReference = F3CEE7BEB39549D845A7BD2720D85358 /* Pods-ToastTestProject */;
+			productReference = F3CEE7BEB39549D845A7BD2720D85358 /* Pods_ToastTestProject.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
