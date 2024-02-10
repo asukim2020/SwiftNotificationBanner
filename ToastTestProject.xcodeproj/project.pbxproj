@@ -171,6 +171,7 @@
 				52B62C072B72133C00A09834 /* Sources */,
 				52B62C082B72133C00A09834 /* Frameworks */,
 				52B62C092B72133C00A09834 /* Resources */,
+				26FD30786FC83C7BF6F400DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +289,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		26FD30786FC83C7BF6F400DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToastTestProject/Pods-ToastTestProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C63CE6B8A4FD0897286072ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
