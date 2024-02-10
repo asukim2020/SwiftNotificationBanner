@@ -41,7 +41,6 @@ class TestNotificationBannerView: UIView {
         setUpUI()
     }
     
-    // TODO: - add style
     init(title: String, style: BannerStyle = .info) {
         super.init(frame: CGRect())
         self.title.text = title
@@ -67,16 +66,13 @@ class TestNotificationBannerView: UIView {
         title.numberOfLines = 0
         title.textAlignment = .center
         title.font = UIFont.boldSystemFont(ofSize: title.font.pointSize)
-//        title.text = "testsdafkfsdjkflhfjklshfklhfkjshklfjffhfksdfdljdkrdhkdjhdkjshkhrlhjkhskrhkljkldfkjaslhadfhjklsdafhlsafdkf;afjsdlffsdakljf;asdjkjhfkfkshf1"
-//        title.text = "testsdafkfsdjkflhfjklshfklhfkjshklfjffhfksdfdljdkrdhkdjhdkjshkhrlhjkhskrhkljkldfkjaslhadfhjklsdafhlsafdkf;afjsdlffasdfasdaklffj1"
-//        title.text = "test"
+
         let titleWidth = (self.maxWidth ?? (2 * leftMargin)) - (2 * leftMargin)
         let titleheight = title.getHeight(width: titleWidth)
         height = safeTopHeight + titleheight + (2 * topMargin)
         title.frame = CGRect(x: leftMargin, y: safeTopHeight + topMargin - height, width: (self.maxWidth ?? (2 * leftMargin)) - (2 * leftMargin), height: titleheight)
         
         translatesAutoresizingMaskIntoConstraints = false
-//        backgroundColor = .blue
         frame = CGRect(x: 0, y: -height, width: self.maxWidth ?? 0, height: height)
         vw.backgroundColor = .green
     }

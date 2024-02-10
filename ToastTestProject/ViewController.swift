@@ -35,7 +35,11 @@ class ViewController: RxViewController {
                 }
             }()
                 
-            let banner = TestNotificationBannerView(title: "test \(self.count)", style: style)
+//            let text = "testsdafkfsdjkflhfjklshfklhfkjshklfjffhfksdfdljdkrdhkdjhdkjshkhrlhjkhskrhkljkldfkjaslhadfhjklsdafhlsafdkf;afjsdlffsdakljf;asdjkjhfkfkshf1"
+//            let text = "testsdafkfsdjkflhfjklshfklhfkjshklfjffhfksdfdljdkrdhkdjhdkjshkhrlhjkhskrhkljkldfkjaslhadfhjklsdafhlsafdkf;afjsdlffasdfasdaklffj1"
+            let text = "test"
+            
+            let banner = TestNotificationBannerView(title: "\(text) \(self.count)", style: style)
             banner.show()
 
         }
