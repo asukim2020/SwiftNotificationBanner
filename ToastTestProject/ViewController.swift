@@ -22,6 +22,9 @@ class ViewController: RxViewController {
         super.viewWillAppear(animated)
         button.addRxTap(disposeBag: disposeBag) {
             self.count += 1
+            ////            let banner = NotificationBanner(title: "title \(self.count)", subtitle: "subtitle", style: .success)
+            //            let banner = StatusBarNotificationBanner(title: "title \(self.count)", style: .success)
+            //            banner.show()
             
             let style = { () -> BannerStyle in
                 switch self.count % 4 {
