@@ -12,35 +12,35 @@ class ViewController: RxViewController {
 
     @IBOutlet weak var button: UIButton!
     var count = 0
-    var banner: TestNotificationBannerView? = nil
-    var isShow = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         button.addRxTap(disposeBag: disposeBag) {
-//            self.prevBanner?.dismiss()
             self.count += 1
-////            let banner = NotificationBanner(title: "title \(self.count)", subtitle: "subtitle", style: .success)
-//            let banner = StatusBarNotificationBanner(title: "title \(self.count)", style: .success)
-//            banner.show()
+            ////            let banner = NotificationBanner(title: "title \(self.count)", subtitle: "subtitle", style: .success)
+            //            let banner = StatusBarNotificationBanner(title: "title \(self.count)", style: .success)
+            //            banner.show()
             
-//            if self.isShow {
-//                self.banner?.dismiss()
-////                self.banner = nil
-//            } else {
-//                self.banner = TestNotificationBannerView()
-//                self.banner?.show()
-//            }
-//            
-//            self.isShow = !self.isShow
-            
-            self.banner = TestNotificationBannerView(title: "test \(self.count)", style: .success)
-            self.banner?.show()
+            let style = { () -> BannerStyle in
+                switch self.count % 4 {
+                case 1:
+                    return .info
+                case 2:
+                    return .success
+                case 3:
+                    return .warning
+                default:
+                    return .danger
+                }
+            }()
+                
+            let banner = TestNotificationBannerView(title: "test \(self.count)", style: style)
+            banner.show()
 
         }
     }

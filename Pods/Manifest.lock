@@ -1,8 +1,4 @@
 PODS:
-  - MarqueeLabel (4.0.5)
-  - NotificationBannerSwift (3.0.6):
-    - MarqueeLabel (~> 4.0.5)
-    - SnapKit (~> 5.0.1)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
     - RxSwift (= 6.6.0)
@@ -12,33 +8,25 @@ PODS:
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
-  - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - NotificationBannerSwift (~> 3.0.0)
   - RxCocoa
   - RxGesture
   - RxSwift
 
 SPEC REPOS:
   trunk:
-    - MarqueeLabel
-    - NotificationBannerSwift
     - RxCocoa
     - RxGesture
     - RxRelay
     - RxSwift
-    - SnapKit
 
 SPEC CHECKSUMS:
-  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
-  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 15cbbcbfe74d13952c99d2f1426b12ff538c130c
+PODFILE CHECKSUM: 6bf5295ee078a4eef857d381a23c5cb42d8eb0fa
 
 COCOAPODS: 1.15.2
