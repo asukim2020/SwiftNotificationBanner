@@ -53,6 +53,10 @@ extension UIView {
             .map { $0?.windows.first } ?? UIApplication.shared.delegate?.window ?? UIApplication.shared.keyWindow
     }
     
+    var maxWidth: CGFloat? {
+        return keyWindow?.frame.width
+    }
+    
     var safeTopHeight: CGFloat {
         return keyWindow?.safeAreaInsets.top ?? 0.0
     }

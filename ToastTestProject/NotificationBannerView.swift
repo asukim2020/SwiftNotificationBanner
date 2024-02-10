@@ -70,14 +70,14 @@ class TestNotificationBannerView: UIView {
 //        title.text = "testsdafkfsdjkflhfjklshfklhfkjshklfjffhfksdfdljdkrdhkdjhdkjshkhrlhjkhskrhkljkldfkjaslhadfhjklsdafhlsafdkf;afjsdlffsdakljf;asdjkjhfkfkshf1"
 //        title.text = "testsdafkfsdjkflhfjklshfklhfkjshklfjffhfksdfdljdkrdhkdjhdkjshkhrlhjkhskrhkljkldfkjaslhadfhjklsdafhlsafdkf;afjsdlffasdfasdaklffj1"
 //        title.text = "test"
-        let titleWidth = (self.keyWindow?.width ?? (2 * leftMargin)) - (2 * leftMargin)
+        let titleWidth = (self.maxWidth ?? (2 * leftMargin)) - (2 * leftMargin)
         let titleheight = title.getHeight(width: titleWidth)
         height = safeTopHeight + titleheight + (2 * topMargin)
-        title.frame = CGRect(x: leftMargin, y: safeTopHeight + topMargin - height, width: (self.keyWindow?.width ?? (2 * leftMargin)) - (2 * leftMargin), height: titleheight)
+        title.frame = CGRect(x: leftMargin, y: safeTopHeight + topMargin - height, width: (self.maxWidth ?? (2 * leftMargin)) - (2 * leftMargin), height: titleheight)
         
         translatesAutoresizingMaskIntoConstraints = false
 //        backgroundColor = .blue
-        frame = CGRect(x: 0, y: -height, width: self.keyWindow?.width ?? 0, height: height)
+        frame = CGRect(x: 0, y: -height, width: self.maxWidth ?? 0, height: height)
         vw.backgroundColor = .green
     }
     
