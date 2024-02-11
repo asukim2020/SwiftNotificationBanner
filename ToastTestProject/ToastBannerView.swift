@@ -31,6 +31,7 @@ public enum BannerStyle: Int {
 
 class ToastBannerView: UIView {
     let title = UILabel()
+    let bottomSeparator = UIView()
     
     private var topConstaint: NSLayoutConstraint? = nil
     private var isDismiss = false
@@ -64,6 +65,7 @@ class ToastBannerView: UIView {
         
         vw.addSubview(self)
         addSubview(title)
+        addSubview(bottomSeparator)
         
         title.translatesAutoresizingMaskIntoConstraints = false
         title.textColor = .white
@@ -78,7 +80,10 @@ class ToastBannerView: UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         frame = CGRect(x: 0, y: -height, width: self.maxWidth ?? 0, height: height)
-        vw.backgroundColor = .green
+        
+        bottomSeparator.translatesAutoresizingMaskIntoConstraints = false
+        bottomSeparator.backgroundColor = .white
+        bottomSeparator.frame = CGRect(x: 0, y: 0, width: self.maxWidth ?? 0, height: 1)
     }
     
     func registerEvent() {
@@ -95,6 +100,7 @@ class ToastBannerView: UIView {
         UIView.animate(withDuration: animationTime, animations: {
             self.setFrameY(height: self.height)
             self.title.setFrameY(height: self.height)
+            self.bottomSeparator.setFrameY(height: self.height)
             self.superview?.layoutIfNeeded()
             self.registerEvent()
             }) { (completed) in
@@ -113,6 +119,7 @@ class ToastBannerView: UIView {
         UIView.animate(withDuration: animationTime, animations: {
             self.setFrameY(height: -self.height)
             self.title.setFrameY(height: -self.height)
+            self.bottomSeparator.setFrameY(height: -self.height)
             self.superview?.layoutIfNeeded()
             }) { (completed) in
                 self.removeFromSuperview()

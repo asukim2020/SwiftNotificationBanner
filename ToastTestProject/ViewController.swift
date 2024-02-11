@@ -10,7 +10,6 @@ import UIKit
 class ViewController: RxViewController {
 
     @IBOutlet weak var button: UIButton!
-    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +19,9 @@ class ViewController: RxViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         button.addRxTap(disposeBag: disposeBag) {
-            self.count += 1
             
             let style = { () -> BannerStyle in
-                switch self.count % 4 {
+                switch Int.random(in: 0 ... 3) {
                 case 1:
                     return .info
                 case 2:
@@ -35,7 +33,7 @@ class ViewController: RxViewController {
                 }
             }()
             
-            let text = { () -> String in
+            let title = { () -> String in
                 switch Int.random(in: 0 ... 9) {
                 case 1:
                     return "test"
@@ -60,7 +58,7 @@ class ViewController: RxViewController {
                 }
             }()
             
-            let banner = ToastBannerView(title: "\(text) \(self.count)", style: style)
+            let banner = ToastBannerView(title: title, style: style)
             banner.show()
 
         }
