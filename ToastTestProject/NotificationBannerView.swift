@@ -29,7 +29,7 @@ public enum BannerStyle: Int {
     }
 }
 
-class ToastBannerView: UIView {
+class NotificationBannerView: UIView {
     let title = UILabel()
     let bottomSeparator = UIView()
     

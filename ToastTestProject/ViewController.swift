@@ -58,7 +58,7 @@ class ViewController: RxViewController {
                 }
             }()
             
-            let banner = ToastBannerView(title: title, style: style)
+            let banner = NotificationBannerView(title: title, style: style)
             banner.show()
 
         }
