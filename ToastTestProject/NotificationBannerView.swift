@@ -62,6 +62,7 @@ class NotificationBannerView: UIView {
     
     func setUpUI() {
         guard let vw = keyWindow else { return }
+        guard let maxWidth = maxWidth else { return }
         
         vw.addSubview(self)
         addSubview(title)
@@ -73,17 +74,17 @@ class NotificationBannerView: UIView {
         title.textAlignment = .center
         title.font = UIFont.boldSystemFont(ofSize: title.font.pointSize)
 
-        let titleWidth = (self.maxWidth ?? (2 * leftMargin)) - (2 * leftMargin)
+        let titleWidth = maxWidth - (2 * leftMargin)
         let titleheight = title.getHeight(width: titleWidth)
         height = safeTopHeight + titleheight + (2 * topMargin)
-        title.frame = CGRect(x: leftMargin, y: safeTopHeight + topMargin - height, width: (self.maxWidth ?? (2 * leftMargin)) - (2 * leftMargin), height: titleheight)
+        title.frame = CGRect(x: leftMargin, y: safeTopHeight + topMargin - height, width: maxWidth - (2 * leftMargin), height: titleheight)
         
         translatesAutoresizingMaskIntoConstraints = false
-        frame = CGRect(x: 0, y: -height, width: self.maxWidth ?? 0, height: height)
+        frame = CGRect(x: 0, y: -height, width: maxWidth, height: height)
         
         bottomSeparator.translatesAutoresizingMaskIntoConstraints = false
         bottomSeparator.backgroundColor = .white
-        bottomSeparator.frame = CGRect(x: 0, y: 0, width: self.maxWidth ?? 0, height: 1)
+        bottomSeparator.frame = CGRect(x: 0, y: 0, width: maxWidth, height: 1)
     }
     
     func registerEvent() {
@@ -101,7 +102,6 @@ class NotificationBannerView: UIView {
             self.setFrameY(height: self.height)
             self.title.setFrameY(height: self.height)
             self.bottomSeparator.setFrameY(height: self.height)
-            self.superview?.layoutIfNeeded()
             self.registerEvent()
             }) { (completed) in
                 DispatchQueue.main.asyncAfter(deadline: .now() + self.dissmisTime) {
@@ -120,7 +120,6 @@ class NotificationBannerView: UIView {
             self.setFrameY(height: -self.height)
             self.title.setFrameY(height: -self.height)
             self.bottomSeparator.setFrameY(height: -self.height)
-            self.superview?.layoutIfNeeded()
             }) { (completed) in
                 self.removeFromSuperview()
             }
