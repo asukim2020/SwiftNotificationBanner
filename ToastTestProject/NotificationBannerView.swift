@@ -105,7 +105,7 @@ class NotificationBannerView: UIView {
     }
     
     func registerEvent() {
-        RxEvent.instance.addBannerStackEvent(disposeBag: disposeBag) { bannerStackEvent in
+        RxEvent.instance.bannerStackEvent.addEvent(disposeBag: disposeBag) { bannerStackEvent in
             let height = self.position == .top ? bannerStackEvent.size.height : -bannerStackEvent.size.height
             UIView.animate(withDuration: self.animationTime, animations: {
                 self.setFrameY(height: height)
@@ -115,7 +115,7 @@ class NotificationBannerView: UIView {
     
     func show() {
         let size = CGSize(width: frame.width, height: title.frame.height + (2 * topMargin))
-        RxEvent.instance.updateBannerStackEvent(bannerStackEvent: BannerStackEvent(size: size))
+        RxEvent.instance.bannerStackEvent.onNext(BannerStackEvent(size: size))
         UIView.animate(withDuration: animationTime, animations: {
             let height = self.position == .top ? self.height : -self.height
             self.setFrameY(height: height)
