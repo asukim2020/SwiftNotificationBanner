@@ -29,13 +29,17 @@ public enum BannerStyle: Int {
     }
 }
 
+public enum BannerPosition: Int {
+    case top
+    case bottom
+}
+
 class NotificationBannerView: UIView {
     let title = UILabel()
     let bottomSeparator = UIView()
     
-    private var topConstaint: NSLayoutConstraint? = nil
+    var position: BannerPosition = .top
     private var isDismiss = false
-    private var originRect: CGRect? = nil
     private var height: CGFloat = 0
     private let disposeBag = DisposeBag()
     
@@ -46,23 +50,26 @@ class NotificationBannerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpUI()
     }
     
-    init(title: String, style: BannerStyle = .info) {
+    init(title: String, style: BannerStyle = .info, position: BannerPosition = .top) {
         super.init(frame: CGRect())
         self.title.text = title
         self.backgroundColor = style.color
+        self.position = position
         setUpUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setUpUI() {
-        guard let vw = keyWindow else { return }
-        guard let maxWidth = maxWidth else { return }
+        guard let vw = keyWindow,
+              let maxWidth = maxWidth,
+              let maxHeight = maxHeight else { return }
+        
+        let safeHeight = position == .top ? safeTopHeight : safeBottomHeight
         
         vw.addSubview(self)
         addSubview(title)
@@ -76,21 +83,32 @@ class NotificationBannerView: UIView {
 
         let titleWidth = maxWidth - (2 * leftMargin)
         let titleheight = title.getHeight(width: titleWidth)
-        height = safeTopHeight + titleheight + (2 * topMargin)
-        title.frame = CGRect(x: leftMargin, y: safeTopHeight + topMargin - height, width: maxWidth - (2 * leftMargin), height: titleheight)
+        
+        height = safeHeight + titleheight + (2 * topMargin)
+        title.frame = CGRect(x: leftMargin,
+                             y: position == .top ? safeHeight + topMargin - height : topMargin + height,
+                             width: maxWidth - (2 * leftMargin),
+                             height: titleheight)
         
         translatesAutoresizingMaskIntoConstraints = false
-        frame = CGRect(x: 0, y: -height, width: maxWidth, height: height)
+        frame = CGRect(x: 0, 
+                       y: position == .top ? -height : maxHeight,
+                       width: maxWidth,
+                       height: height)
         
         bottomSeparator.translatesAutoresizingMaskIntoConstraints = false
         bottomSeparator.backgroundColor = .white
-        bottomSeparator.frame = CGRect(x: 0, y: 0, width: maxWidth, height: 1)
+        bottomSeparator.frame = CGRect(x: 0, 
+                                       y: position == .top ? 0 : height,
+                                       width: maxWidth,
+                                       height: 1)
     }
     
     func registerEvent() {
         RxEvent.instance.addBannerStackEvent(disposeBag: disposeBag) { bannerStackEvent in
+            let height = self.position == .top ? bannerStackEvent.size.height : -bannerStackEvent.size.height
             UIView.animate(withDuration: self.animationTime, animations: {
-                self.setFrameY(height: bannerStackEvent.size.height)
+                self.setFrameY(height: height)
             })
         }
     }
@@ -99,15 +117,16 @@ class NotificationBannerView: UIView {
         let size = CGSize(width: frame.width, height: title.frame.height + (2 * topMargin))
         RxEvent.instance.updateBannerStackEvent(bannerStackEvent: BannerStackEvent(size: size))
         UIView.animate(withDuration: animationTime, animations: {
-            self.setFrameY(height: self.height)
-            self.title.setFrameY(height: self.height)
-            self.bottomSeparator.setFrameY(height: self.height)
+            let height = self.position == .top ? self.height : -self.height
+            self.setFrameY(height: height)
+            self.title.setFrameY(height: height)
+            self.bottomSeparator.setFrameY(height: height)
             self.registerEvent()
-            }) { (completed) in
-                DispatchQueue.main.asyncAfter(deadline: .now() + self.dissmisTime) {
-                    self.dismiss()
-                }
+        }) { (completed) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.dissmisTime) {
+                self.dismiss()
             }
+        }
     }
     
     func dismiss() {
@@ -117,12 +136,15 @@ class NotificationBannerView: UIView {
         
         isDismiss = true
         UIView.animate(withDuration: animationTime, animations: {
-            self.setFrameY(height: -self.height)
-            self.title.setFrameY(height: -self.height)
-            self.bottomSeparator.setFrameY(height: -self.height)
-            }) { (completed) in
-                self.removeFromSuperview()
-            }
+            let height = self.position == .top ? self.height : -self.height
+            self.setFrameY(height: -height)
+            self.title.setFrameY(height: -height)
+            self.bottomSeparator.setFrameY(height: -height)
+        }) { (completed) in
+            self.removeFromSuperview()
+            self.title.removeFromSuperview()
+            self.bottomSeparator.removeFromSuperview()
+        }
     }
 
 }

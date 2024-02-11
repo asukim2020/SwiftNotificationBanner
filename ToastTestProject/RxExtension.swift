@@ -57,6 +57,10 @@ extension UIView {
         return keyWindow?.frame.width
     }
     
+    var maxHeight: CGFloat? {
+        return keyWindow?.frame.height
+    }
+    
     var safeTopHeight: CGFloat {
         return keyWindow?.safeAreaInsets.top ?? 0.0
     }
@@ -67,10 +71,6 @@ extension UIView {
     
     func setFrameY(height: CGFloat) {
         frame = CGRect(x: frame.minX, y: frame.minY + height, width: frame.width, height: frame.height)
-    }
-    
-    func setFrameHeight(height: CGFloat) {
-        frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height + height)
     }
 }
 
