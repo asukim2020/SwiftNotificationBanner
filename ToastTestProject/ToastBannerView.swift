@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 public enum BannerStyle: Int {
     case danger
@@ -28,13 +29,19 @@ public enum BannerStyle: Int {
     }
 }
 
-class TestNotificationBannerView: UIView {
+class ToastBannerView: UIView {
     let title = UILabel()
     
     private var topConstaint: NSLayoutConstraint? = nil
     private var isDismiss = false
     private var originRect: CGRect? = nil
     private var height: CGFloat = 0
+    private let disposeBag = DisposeBag()
+    
+    let topMargin: CGFloat = 6
+    let leftMargin: CGFloat = 30
+    let animationTime: CGFloat = 0.3
+    let dissmisTime: CGFloat = 2.5
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,9 +62,6 @@ class TestNotificationBannerView: UIView {
     func setUpUI() {
         guard let vw = keyWindow else { return }
         
-        let topMargin: CGFloat = 6
-        let leftMargin: CGFloat = 30
-        
         vw.addSubview(self)
         addSubview(title)
         
@@ -77,13 +81,24 @@ class TestNotificationBannerView: UIView {
         vw.backgroundColor = .green
     }
     
+    func registerEvent() {
+        RxEvent.instance.addBannerStackEvent(disposeBag: disposeBag) { bannerStackEvent in
+            UIView.animate(withDuration: self.animationTime, animations: {
+                self.setFrameY(height: bannerStackEvent.size.height)
+            })
+        }
+    }
+    
     func show() {
-        UIView.animate(withDuration: 0.3, animations: {
+        let size = CGSize(width: frame.width, height: title.frame.height + (2 * topMargin))
+        RxEvent.instance.updateBannerStackEvent(bannerStackEvent: BannerStackEvent(size: size))
+        UIView.animate(withDuration: animationTime, animations: {
             self.setFrameY(height: self.height)
             self.title.setFrameY(height: self.height)
             self.superview?.layoutIfNeeded()
+            self.registerEvent()
             }) { (completed) in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + self.dissmisTime) {
                     self.dismiss()
                 }
             }
@@ -95,7 +110,7 @@ class TestNotificationBannerView: UIView {
         }
         
         isDismiss = true
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: animationTime, animations: {
             self.setFrameY(height: -self.height)
             self.title.setFrameY(height: -self.height)
             self.superview?.layoutIfNeeded()
