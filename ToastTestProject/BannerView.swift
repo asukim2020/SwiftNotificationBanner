@@ -102,6 +102,7 @@ class BannerView: UIView {
                                        y: position == .top ? 0 : height,
                                        width: maxWidth,
                                        height: 1)
+        bottomSeparator.isHidden = true
     }
     
     func registerEvent() {
@@ -123,6 +124,7 @@ class BannerView: UIView {
             self.bottomSeparator.setFrameY(height: height)
             self.registerEvent()
         }) { (completed) in
+            self.bottomSeparator.isHidden = false
             DispatchQueue.main.asyncAfter(deadline: .now() + self.dissmisTime) {
                 self.dismiss()
             }
@@ -135,11 +137,11 @@ class BannerView: UIView {
         }
         
         isDismiss = true
+        bottomSeparator.isHidden = true
         UIView.animate(withDuration: animationTime, animations: {
             let height = self.position == .top ? self.height : -self.height
             self.setFrameY(height: -height)
             self.title.setFrameY(height: -height)
-            self.bottomSeparator.setFrameY(height: -height)
         }) { (completed) in
             self.removeFromSuperview()
             self.title.removeFromSuperview()
