@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		124BF2BA2B78505E003D21B3 /* RxEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BF2B92B78505E003D21B3 /* RxEvent.swift */; };
+		124BF2BA2B78505E003D21B3 /* BannerViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BF2B92B78505E003D21B3 /* BannerViewEvent.swift */; };
 		263465AEF1A40966D8355B8C /* Pods_ToastTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BB30B94246F3F3C4A9C618 /* Pods_ToastTestProject.framework */; };
-		522E23CE2B7222A100A74013 /* NotificationBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E23CD2B7222A100A74013 /* NotificationBannerView.swift */; };
+		522E23CE2B7222A100A74013 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522E23CD2B7222A100A74013 /* BannerView.swift */; };
 		52B62C0F2B72133C00A09834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C0E2B72133C00A09834 /* AppDelegate.swift */; };
 		52B62C112B72133C00A09834 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C102B72133C00A09834 /* SceneDelegate.swift */; };
 		52B62C132B72133C00A09834 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62C122B72133C00A09834 /* ViewController.swift */; };
@@ -41,8 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		124BF2B92B78505E003D21B3 /* RxEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxEvent.swift; sourceTree = "<group>"; };
-		522E23CD2B7222A100A74013 /* NotificationBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerView.swift; sourceTree = "<group>"; };
+		124BF2B92B78505E003D21B3 /* BannerViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewEvent.swift; sourceTree = "<group>"; };
+		522E23CD2B7222A100A74013 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		52B62C0B2B72133C00A09834 /* ToastTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToastTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B62C0E2B72133C00A09834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B62C102B72133C00A09834 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 				52B62C1C2B72133D00A09834 /* Info.plist */,
 				52B62C3E2B7215DF00A09834 /* RxViewController.swift */,
 				52B62C402B7215F500A09834 /* RxExtension.swift */,
-				522E23CD2B7222A100A74013 /* NotificationBannerView.swift */,
-				124BF2B92B78505E003D21B3 /* RxEvent.swift */,
+				522E23CD2B7222A100A74013 /* BannerView.swift */,
+				124BF2B92B78505E003D21B3 /* BannerViewEvent.swift */,
 			);
 			path = ToastTestProject;
 			sourceTree = "<group>";
@@ -338,13 +338,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				124BF2BA2B78505E003D21B3 /* RxEvent.swift in Sources */,
+				124BF2BA2B78505E003D21B3 /* BannerViewEvent.swift in Sources */,
 				52B62C132B72133C00A09834 /* ViewController.swift in Sources */,
 				52B62C0F2B72133C00A09834 /* AppDelegate.swift in Sources */,
 				52B62C3F2B7215DF00A09834 /* RxViewController.swift in Sources */,
 				52B62C112B72133C00A09834 /* SceneDelegate.swift in Sources */,
 				52B62C412B7215F500A09834 /* RxExtension.swift in Sources */,
-				522E23CE2B7222A100A74013 /* NotificationBannerView.swift in Sources */,
+				522E23CE2B7222A100A74013 /* BannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
