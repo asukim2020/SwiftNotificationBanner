@@ -112,6 +112,13 @@ class BannerView: UIView {
                 self.setFrameY(height: height)
             })
         }
+        
+//        self.rx.gesture(.swipe(direction: .up))
+//            .when(.recognized)
+//            .subscribe { event in
+//                self.dismiss()
+//            }
+//            .disposed(by: disposeBag)
     }
     
     func show() {
