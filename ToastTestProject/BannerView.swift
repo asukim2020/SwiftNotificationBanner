@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
+import RxGesture
 
 public enum BannerStyle: Int {
     case danger
@@ -113,12 +115,12 @@ class BannerView: UIView {
             })
         }
         
-//        self.rx.gesture(.swipe(direction: .up))
-//            .when(.recognized)
-//            .subscribe { event in
-//                self.dismiss()
-//            }
-//            .disposed(by: disposeBag)
+        self.rx.gesture(.swipe(direction: .up))
+            .when(.recognized)
+            .subscribe { event in
+                self.dismiss()
+            }
+            .disposed(by: disposeBag)
     }
     
     func show() {
