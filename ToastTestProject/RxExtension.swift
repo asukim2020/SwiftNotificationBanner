@@ -92,6 +92,9 @@ extension UILabel {
     }
     
     func getHeight(width: CGFloat) -> CGFloat {
+        if (width <= 0) {
+            return 0
+        }
         return CGFloat((Int(self.width / width) + 1)) * self.height
     }
 }
